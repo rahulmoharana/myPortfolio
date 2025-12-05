@@ -1,4 +1,4 @@
-/* Standard CSS - No Build Step Required */
+/* Standard CSS - Loaded alongside Tailwind CDN */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap');
 
 html {
@@ -12,15 +12,7 @@ body {
   font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* Hide default cursor for the custom cursor component */
-  cursor: none; 
-}
-
-/* Revert cursor for touch devices */
-@media (hover: none) and (pointer: coarse) {
-  body {
-    cursor: auto;
-  }
+  cursor: default;
 }
 
 ::selection {

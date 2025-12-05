@@ -1,5 +1,4 @@
 import React, { Suspense } from 'react';
-import CustomCursor from './components/CustomCursor';
 import ScrollProgress from './components/ScrollProgress';
 import Hero from './components/sections/Hero';
 import About from './components/sections/About';
@@ -12,24 +11,23 @@ function App() {
   return (
     <div className="bg-white min-h-screen selection:bg-black selection:text-white">
       {/* Utility Components */}
-      <CustomCursor />
       <ScrollProgress />
 
-      {/* Main Layout - Single Column */}
-      <main className="mx-auto max-w-[90%] md:max-w-3xl px-4 md:px-0 relative">
-        
-        {/* Navigation / Header Logo (Fixed or Absolute) */}
-        <header className="absolute top-0 left-0 py-8 z-40 mix-blend-difference text-white">
-           <span className="font-bold text-lg tracking-tighter">RM.</span>
-        </header>
+      {/* Navigation / Header Logo (Fixed) */}
+      <header className="fixed top-0 left-0 w-full py-6 px-6 md:px-12 z-40 mix-blend-difference text-white pointer-events-none">
+         <div className="max-w-5xl mx-auto w-full">
+           <span className="font-bold text-xl tracking-tighter pointer-events-auto cursor-pointer">RM.</span>
+         </div>
+      </header>
 
+      {/* Main Layout */}
+      <main className="mx-auto max-w-[90%] md:max-w-5xl px-4 md:px-6 relative">
         <Hero />
         <About />
         <Marquee />
         <Projects />
         <Experience />
         <Contact />
-        
       </main>
     </div>
   );
