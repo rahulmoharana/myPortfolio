@@ -6,22 +6,22 @@ const Marquee: React.FC = () => {
   const skills = [...CONTENT.skills, ...CONTENT.skills, ...CONTENT.skills];
 
   return (
-    <div className="w-full py-12 overflow-hidden bg-white relative">
-      {/* Left Fade Gradient - blending with white bg */}
-      <div className="absolute top-0 left-0 h-full w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+    <div className="marquee-section">
+      {/* Left Fade Gradient */}
+      <div className="marquee-fade-left" />
       
-      {/* Right Fade Gradient - blending with white bg */}
-      <div className="absolute top-0 right-0 h-full w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+      {/* Right Fade Gradient */}
+      <div className="marquee-fade-right" />
 
-      <div className="relative w-full max-w-full overflow-hidden">
+      <div className="marquee-container">
         <div 
-          className="flex whitespace-nowrap animate-marquee hover:[animation-play-state:paused]"
+          className="marquee-content"
           aria-hidden="true"
         >
           {skills.map((skill, idx) => (
             <span 
               key={`${skill}-${idx}`} 
-              className="mx-8 text-4xl font-bold text-gray-800 uppercase select-none opacity-80"
+              className="marquee-item"
             >
               {skill}
             </span>

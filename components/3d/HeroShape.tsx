@@ -32,7 +32,7 @@ const AnimatedSphere = () => {
 
 const HeroShape: React.FC = () => {
   return (
-    <div className="absolute right-0 top-0 w-full h-full md:w-2/3 opacity-50 -z-10 pointer-events-none">
+    <div className="bg-shape-container">
       <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
         {/* @ts-ignore */}
         <ambientLight intensity={0.8} />

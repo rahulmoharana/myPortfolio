@@ -7,34 +7,34 @@ const Projects: React.FC = () => {
   return (
     <motion.section 
       id="projects" 
-      className="py-24"
+      className="section-wrapper"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
       variants={sectionReveal}
     >
-      <div className="max-w-2xl">
-        <h2 className="text-sm font-bold uppercase tracking-widest text-gray-500 mb-12">02 — Selected Works</h2>
+      <div className="content-max-width">
+        <h2 className="section-label">02 — Selected Works</h2>
         
-        <div className="space-y-16">
+        <div className="projects-list">
           {CONTENT.projects.map((project, idx) => (
             <motion.a 
               href={project.link}
               key={idx}
-              className="block group cursor-pointer"
+              className="project-item group"
               initial="rest"
               whileHover="hover"
               animate="rest"
             >
-              <div className="flex flex-col">
-                <motion.div className="flex items-baseline justify-between mb-2">
+              <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <motion.div className="project-header">
                   <motion.h3 
                     variants={projectHover}
-                    className="text-2xl md:text-3xl font-bold text-black"
+                    className="project-title"
                   >
                     {project.title}
                   </motion.h3>
-                  <span className="text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <span className="project-link-text">
                     View Project ↗
                   </span>
                 </motion.div>
@@ -42,7 +42,7 @@ const Projects: React.FC = () => {
                 {/* Animated underline */}
                 <motion.div 
                   variants={underlineHover}
-                  className="w-full h-[1px] bg-black mb-4 origin-left"
+                  className="separator"
                 />
 
                 <motion.div
@@ -51,10 +51,10 @@ const Projects: React.FC = () => {
                      hover: { y: -5, transition: { duration: 0.2 } }
                    }}
                 >
-                  <p className="text-gray-600 mb-3 leading-relaxed">
+                  <p className="project-desc">
                     {project.description}
                   </p>
-                  <div className="flex gap-3 text-sm text-gray-400 font-mono">
+                  <div className="project-tags">
                     {project.tags.map(tag => <span key={tag}>#{tag}</span>)}
                   </div>
                 </motion.div>

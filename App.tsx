@@ -9,19 +9,19 @@ import Contact from './components/sections/Contact';
 
 function App() {
   return (
-    <div className="bg-white min-h-screen selection:bg-black selection:text-white">
+    <div className="app-container">
       {/* Utility Components */}
       <ScrollProgress />
 
-      {/* Navigation / Header Logo (Fixed) */}
-      <header className="fixed top-0 left-0 w-full py-6 px-6 md:px-12 z-40 mix-blend-difference text-white pointer-events-none">
-         <div className="max-w-5xl mx-auto w-full">
-           <span className="font-bold text-xl tracking-tighter pointer-events-auto cursor-pointer">RM.</span>
+      {/* Navigation / Header Logo */}
+      <header className="site-header">
+         <div className="header-content">
+           <span className="logo">RM.</span>
          </div>
       </header>
 
       {/* Main Layout */}
-      <main className="mx-auto max-w-[90%] md:max-w-5xl px-4 md:px-6 relative">
+      <main className="main-layout">
         <Hero />
         <About />
         <Marquee />

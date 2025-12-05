@@ -16,9 +16,9 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex flex-col justify-center pt-20 pb-20 overflow-hidden">
+    <section id="hero" className="hero-section">
       {/* 3D Background - Lazy loaded */}
-      <Suspense fallback={<div className="absolute right-0 top-0 w-1/2 h-full" />}>
+      <Suspense fallback={<div className="bg-shape-container" />}>
         <HeroShape />
       </Suspense>
 
@@ -26,21 +26,21 @@ const Hero: React.FC = () => {
         variants={staggerContainer}
         initial="hidden"
         animate="show"
-        className="z-10 w-full max-w-2xl"
+        className="hero-content"
       >
         <motion.h1 
           variants={fadeInUp} 
-          className="text-5xl md:text-7xl font-bold tracking-tight mb-6 origin-left inline-block cursor-default"
+          className="hero-title"
           whileHover={{ scale: 1.02, x: 10 }}
           transition={{ type: "spring", stiffness: 300, damping: 10 }}
         >
           {CONTENT.name}
         </motion.h1>
 
-        <div className="mb-8">
+        <div style={{ marginBottom: '2rem' }}>
           <motion.h2 
             variants={fadeInUp}
-            className="text-xl md:text-2xl font-medium text-gray-600 inline-block origin-left cursor-default"
+            className="hero-subtitle"
             whileHover={{ x: 5, color: "#0a0a0a" }}
             transition={{ type: "spring", stiffness: 300, damping: 10 }}
           >
@@ -50,27 +50,27 @@ const Hero: React.FC = () => {
 
         <motion.p 
           variants={fadeInUp}
-          className="text-lg md:text-xl leading-relaxed text-gray-800 mb-12 max-w-lg"
+          className="hero-tagline"
         >
           {CONTENT.tagline}
         </motion.p>
 
-        <motion.div variants={fadeInUp} className="flex gap-6 items-center">
+        <motion.div variants={fadeInUp} className="hero-actions">
           <a 
             href="#projects" 
             onClick={(e) => handleScroll(e, 'projects')}
-            className="group relative inline-flex items-center justify-center px-0 py-2 text-lg font-medium text-black transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 rounded-sm"
+            className="btn-link group"
           >
-            <span className="mr-2">View Work</span>
-            <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
+            <span style={{ marginRight: '0.5rem' }}>View Work</span>
+            <span className="arrow">→</span>
             {/* Underline expanding from left to right */}
-            <span className="absolute bottom-0 left-0 w-full h-[2px] bg-black origin-left transform scale-x-0 transition-transform duration-300 ease-out group-hover:scale-x-100"></span>
+            <span className="underline"></span>
           </a>
           
           <a 
             href="#contact" 
             onClick={(e) => handleScroll(e, 'contact')}
-            className="text-gray-500 hover:text-black transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 rounded-sm focus-visible:bg-gray-100 px-4 py-2 -ml-4"
+            className="btn-secondary"
           >
             Contact Me
           </a>
