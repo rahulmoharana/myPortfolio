@@ -30,17 +30,23 @@ const Hero: React.FC = () => {
       >
         <motion.h1 
           variants={fadeInUp} 
-          className="text-5xl md:text-7xl font-bold tracking-tight mb-6"
+          className="text-5xl md:text-7xl font-bold tracking-tight mb-6 origin-left inline-block cursor-default"
+          whileHover={{ scale: 1.02, x: 10 }}
+          transition={{ type: "spring", stiffness: 300, damping: 10 }}
         >
           {CONTENT.name}
         </motion.h1>
 
-        <motion.h2 
-          variants={fadeInUp}
-          className="text-xl md:text-2xl font-medium text-gray-600 mb-8"
-        >
-          {CONTENT.title}
-        </motion.h2>
+        <div className="mb-8">
+          <motion.h2 
+            variants={fadeInUp}
+            className="text-xl md:text-2xl font-medium text-gray-600 inline-block origin-left cursor-default"
+            whileHover={{ x: 5, color: "#0a0a0a" }}
+            transition={{ type: "spring", stiffness: 300, damping: 10 }}
+          >
+            {CONTENT.title}
+          </motion.h2>
+        </div>
 
         <motion.p 
           variants={fadeInUp}
@@ -64,7 +70,7 @@ const Hero: React.FC = () => {
           <a 
             href="#contact" 
             onClick={(e) => handleScroll(e, 'contact')}
-            className="text-gray-500 hover:text-black transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 rounded-sm"
+            className="text-gray-500 hover:text-black transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 rounded-sm focus-visible:bg-gray-100 px-4 py-2 -ml-4"
           >
             Contact Me
           </a>

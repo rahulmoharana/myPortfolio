@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rahul Moharana - Full Stack Developer</title>
     <meta name="description" content="Portfolio of Rahul Moharana, a Full Stack Developer specializing in robust and scalable web solutions." />
+    
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Config for CDN -->
     <script>
       tailwind.config = {
         theme: {
@@ -39,52 +43,25 @@
                 '100%': { transform: 'translateX(-100%)' },
               }
             }
-          },
-        },
-      }
-    </script>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap');
-      
-      html {
-        scroll-behavior: smooth;
-        background-color: #ffffff;
-        color: #0a0a0a;
-      }
-      
-      body {
-        margin: 0;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        cursor: none; /* Hide default cursor to use custom cursor */
-      }
-
-      /* Revert cursor for touch devices */
-      @media (hover: none) and (pointer: coarse) {
-        body {
-          cursor: auto;
+          }
         }
       }
+    </script>
 
-      ::selection {
-        background-color: #000;
-        color: #fff;
+    <script type="importmap">
+    {
+      "imports": {
+        "react/": "https://aistudiocdn.com/react@^19.2.1/",
+        "react": "https://aistudiocdn.com/react@^19.2.1",
+        "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+        "three": "https://aistudiocdn.com/three@^0.181.2",
+        "@react-three/fiber": "https://aistudiocdn.com/@react-three/fiber@^9.4.2",
+        "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.25",
+        "@react-three/drei": "https://aistudiocdn.com/@react-three/drei@^10.7.7"
       }
-    </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react/": "https://aistudiocdn.com/react@^19.2.1/",
-    "react": "https://aistudiocdn.com/react@^19.2.1",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
-    "three": "https://aistudiocdn.com/three@^0.181.2",
-    "@react-three/fiber": "https://aistudiocdn.com/@react-three/fiber@^9.4.2",
-    "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.25",
-    "@react-three/drei": "https://aistudiocdn.com/@react-three/drei@^10.7.7"
-  }
-}
-</script>
-</head>
+    }
+    </script>
+  </head>
   <body>
     <div id="root"></div>
   </body>
